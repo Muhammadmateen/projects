@@ -1,0 +1,48 @@
+
+
+
+<span ng-show="ctrl.loader" layout="row" layout-align="center center">
+        <md-progress-circular class="md-hue-2" md-mode="indeterminate" md-diameter="80px"></md-progress-circular>
+        Loading Paper...
+        </span>
+
+<div ng-show="ctrl.showQuestions">
+    <div layout="column" layout-align="end end">
+    <b>Time Left = {{ctrl.min}} : {{ctrl.sec}}</b>
+    </div>
+
+
+    <form name="questionForm">
+    <md-card style="width:800px">
+        <md-card-content>
+            <h3>Questions :{{ctrl.questionNo+1}} / {{ctrl.questionPaper.length}}</h3>
+
+            <md-radio-group ng-model="ctrl.option" required>
+                <h2>{{ctrl.questionPaper[ctrl.questionNo].Question}}</h2>
+                <md-radio-button name="questionForm.option" ng-model="ctrl.option" value="A" class="md-primary">
+                    {{ctrl.questionPaper[ctrl.questionNo].A}}</md-radio-button>
+                <md-radio-button name="questionForm.option" ng-model="ctrl.option" value="B" class="md-primary">
+                    {{ctrl.questionPaper[ctrl.questionNo].B}}</md-radio-button>
+                <md-radio-button name="questionForm.option" ng-model="ctrl.option" value="C" class="md-primary">
+                    {{ctrl.questionPaper[ctrl.questionNo].C}}</md-radio-button>
+                <md-radio-button name="questionForm.option" ng-model="ctrl.option" value="D" class="md-primary">
+                    {{ctrl.questionPaper[ctrl.questionNo].D}}</md-radio-button>
+            </md-radio-group>
+
+            <h1>Selected : {{ctrl.option}}</h1>
+
+            <md-button class="md-raised md-primary" ng-disabled="questionForm.$invalid" ng-click="ctrl.nextQuestion()" style="width: 15%">Next</md-button>
+        </md-card-content>
+
+        </md-card-content>
+    </md-card>
+        </form>
+
+</div>
+
+        <div ng-show="ctrl.showResult" layout="row" layout-align="center center">
+            <h1>Result : {{ctrl.result}}%</h1>
+        </div>
+
+
+

@@ -1,0 +1,46 @@
+
+
+
+<div layout="column" layout-align="center center">
+    <span ng-show="ctrl.loader">
+<md-progress-circular class="md-hue-2" md-mode="indeterminate" md-diameter="40px"></md-progress-circular>
+Profile Loading.....
+</span>
+
+
+<form name="changePass" ng-hide="ctrl.loader">
+
+
+        <h2>Profile</h2>
+
+
+
+        <table border="1" style="border-style: dashed ">
+            <tr>
+                <th>Student Name</th>
+                <td>{{ctrl.profileDetails[4].$value}}</td>
+            </tr>
+            <tr>
+                <th>Father Name</th>
+                <td>{{ctrl.profileDetails[2].$value}}</td>
+            </tr>
+            <tr>
+                <th>Institute</th>
+                <td>{{ctrl.profileDetails[3].$value}}</td>
+            </tr>
+            <tr>
+                <th>Contact No</th>
+                <td>{{ctrl.profileDetails[1].$value}}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ctrl.profileDetails[0].$value}}</td>
+            </tr>
+        </table>
+
+
+
+</form>
+
+
+</div>

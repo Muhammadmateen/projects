@@ -1,0 +1,14 @@
+
+
+
+<div layout="column" layout-align="center center">
+<span ng-show="ctrl.loader">
+        <md-progress-circular class="md-hue-2" md-mode="indeterminate" md-diameter="40px"></md-progress-circular>
+           Loading Results.....
+        </span>
+
+            <h1 style="color: blue">Results</h1>
+
+            <h2 ng-repeat="re in ctrl.result"> {{re.$id}} : {{re.percentage}}%</h2>
+
+</div>

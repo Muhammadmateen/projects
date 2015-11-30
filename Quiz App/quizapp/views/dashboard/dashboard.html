@@ -1,0 +1,68 @@
+
+
+
+
+<div ng-show="ctrl.loader">
+<md-toolbar>
+    <h2 class="md-toolbar-tools">
+        <span flex>Dashboard</span>
+        {{ctrl.stdName}}
+
+
+        <md-menu>
+            <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdOpenMenu, $event)">
+                <md-icon md-menu-origin md-svg-icon="./bower_components/angular-material/demos/toolbar/demoBasicUsage/img/icons/menu.svg"></md-icon>
+                <md-tooltip>
+                    Menu
+                </md-tooltip>
+            </md-button>
+            <md-menu-content width="3" style="margin-top: 56px">
+                <md-menu-item>
+                    <md-button ng-click="ctrl.userProfile()">
+                       Profile
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="ctrl.changePassRoute()">
+                        Change Password
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button style="color: red" ng-click="ctrl.logout()">
+                        Logout
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </h2>
+</md-toolbar>
+
+    <div ng-cloak layout="row">
+        <div flex="18" style="margin-top: 20px">
+            <div class="demo-swipe" md-swipe-left="onSwipeLeft()">
+                <md-button class="md-raised md-primary" ui-sref="dashboard.selectpaper">Take Quiz</md-button>
+            </div>
+            <div class="demo-swipe" md-swipe-right="onSwipeRight()">
+                    <md-button class="md-raised md-primary" ui-sref="dashboard.result">Results</md-button>
+            </div>
+        </div>
+        <md-divider></md-divider>
+        <div flex="80" layout="row" style="margin-top: 60px">
+            <div flex layout="row" layout-align="center center"
+                 class="demo-swipe" md-swipe-up="onSwipeUp()">
+                <ui-view></ui-view>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<span ng-hide="ctrl.loader" layout="row" layout-align="center center">
+        <md-progress-circular class="md-hue-2" md-mode="indeterminate" md-diameter="40px"></md-progress-circular>
+           Logging out...
+        </span>

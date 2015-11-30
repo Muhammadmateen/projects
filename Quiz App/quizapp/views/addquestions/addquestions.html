@@ -1,0 +1,78 @@
+
+
+
+
+
+    <h1>This is Add question Controller</h1>
+
+    <!--name="addQuestionForm" novalidate-->
+    <form name="addQuestionForm" novalidate>
+
+        Select Papers : <select ng-model="ctrl.selectedValue" ng-change="ctrl.allPapers(ctrl.selectedValue)" required name="papersList">
+        <option ng-repeat="ab in ctrl.papers" value={{ab.$id}}>{{ab.paperName}}</option>
+    </select>
+        <!--<span style="color: red" ng-show="addQuestionForm.papersList.$dirty && addQuestionForm.papersList.$invalid">
+            <span ng-show="addQuestionForm.papersList.$error.required">
+                Select the paper
+            </span>
+        </span>-->
+
+
+        <div ng-hide="ctrl.hideTxtbox">
+            Write Question : <input type="text" ng-model="ctrl.question" name="txtboxQuestion" required>
+        <span style="color: red" ng-show="addQuestionForm.txtboxQuestion.$dirty && addQuestionForm.txtboxQuestion.$invalid">
+            <span ng-show="addQuestionForm.txtboxQuestion.$error.required">Question is required</span>
+        </span> <br><br>
+
+
+            Option A : <input type="text" name="txtboxA" ng-model="ctrl.optA" required>
+        <span ng-show="addQuestionForm.txtboxA.$dirty && addQuestionForm.txtboxA.$invalid">
+            <span ng-show="addQuestionForm.txtboxA.$error.required">
+                    Option A is required
+            </span>
+        </span>
+            <br>
+
+
+            Option B : <input type="text" name="txtboxB" ng-model="ctrl.optB" required>
+        <span ng-show="addQuestionForm.txtboxB.$dirty && addQuestionForm.txtboxB.$invalid">
+            <span ng-show="addQuestionForm.txtboxB.$error.required">Option B is required</span>
+        </span>
+            <br>
+
+
+            Option C : <input type="text" name="txtboxC" ng-model="ctrl.optC" required>
+        <span ng-show="addQuestionForm.txtboxC.$dirty && addQuestionForm.txtboxC.$invalid">
+            <span ng-show="addQuestionForm.txtboxC.$error.required">Option C is required</span>
+        </span>
+            <br>
+
+
+            Option D : <input type="text" name="txtboxD" ng-model="ctrl.optD" required>
+        <span ng-show="addQuestionForm.txtboxD.$invalid && addQuestionForm.txtboxD.$dirty">
+            <span ng-show="addQuestionForm.txtboxD.$error.required">Option D is required</span>
+        </span>
+            <br>
+
+            <br>
+            Select Correct answer : <select name="answer" ng-model="ctrl.selectedAnswer" required>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+        </select>
+            <span ng-show="addQuestionForm.answer.$error.required">Correct answer is required</span>
+            </span>
+
+            Selected Answer :  {{ctrl.selectedAnswer}}
+
+            <input type="button" value="Add Question" ng-disabled="addQuestionForm.$invalid" ng-click="ctrl.addQuestion(ctrl.selectedValue)">
+        </div>
+
+        <input type="button" value="clear" ng-click="ctrl.setTxtboxNull()">
+
+
+
+        <!--{{addQuesctrl.allData}}-->
+
+    </form>

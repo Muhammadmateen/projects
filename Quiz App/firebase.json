@@ -1,0 +1,9 @@
+{
+  "firebase": "quizzapp",
+  "public": "quizapp",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

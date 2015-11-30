@@ -1,0 +1,27 @@
+
+
+
+
+    <div layout="column" layout-align="center center" style="min-height: 300px;" ng-cloak>
+    <form ng-show="ctrl.formShow" name="selectPaperForm">
+
+        <md-input-container class="md-block">
+            <label>Select Paper</label>
+            <md-select name="myModel" ng-model="ctrl.paperName" required style="min-width: 400px">
+                <md-option ng-repeat="sp in ctrl.allPapers">{{sp.paperName}}</md-option>
+            </md-select>
+        </md-input-container>
+        <div layout="row">
+            <md-button ng-click="ctrl.startQuizz(ctrl.paperName)" ng-disabled="selectPaperForm.$invalid" class="md-raised md-primary" layout-align="center start">Start Quiz</md-button>
+        </div>
+
+    </form>
+
+    <span ng-hide="ctrl.formShow">
+        <md-progress-circular class="md-hue-2" md-mode="indeterminate" md-diameter="60px"></md-progress-circular>
+        Loading Papers...
+    </span>
+
+    </div>
+
+

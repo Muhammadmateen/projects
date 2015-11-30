@@ -1,0 +1,18 @@
+
+
+
+
+
+
+    <h1>This is Add paper Controller</h1>
+
+    <br>
+
+    <input type="text" placeholder="Create New Subject paper" ng-model="ctrl.paper">
+
+    {{ctrl.paper}}
+    <button ng-click="ctrl.createNewPaper(ctrl.paper)">Create Paper</button>
+
+    <div ng-hide="ctrl.questionDiv">
+        If you want to add Questions or make sample paper <a ui-sref="addquestions">Click here</a>
+    </div>
